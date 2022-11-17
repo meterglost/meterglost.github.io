@@ -1,0 +1,10 @@
+# Project
+README.md
+LICENSE
+.editorconfig
+.gitignore
+config
+
+# Docker
+.dockerignore
+docker-compose.yml
