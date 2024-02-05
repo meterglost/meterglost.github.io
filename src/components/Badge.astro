@@ -1,0 +1,21 @@
+---
+interface Props {
+	icon: string;
+}
+
+const { icon } = Astro.props;
+---
+
+<span class="badge-container">
+	<i class={icon}></i>
+</span>
+
+<style>
+	.badge-container {
+		@apply rounded bg-zinc-300 dark:bg-zinc-600 inline-flex;
+	}
+
+	.badge-container > i {
+		@apply text-[2em] m-2;
+	}
+</style>

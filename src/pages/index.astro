@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Badge from "../components/Badge.astro";
+---
+
+<Layout title="Welcome to my profile">
+	<Header />
+	<main>
+		<hr />
+		<article class="prose dark:prose-invert max-w-full">
+			<h1>Ha Nguyen</h1>
+			<p>I'm a Computer Engineering student and I'm learning to become a DevOps engineer. I have experience working on some web and CLI applications with:</p>
+			<table>
+				<tbody>
+					<tr>
+						<td>Language</td>
+						<td>
+							<Badge icon="colored devicon-go-original-wordmark" />
+							<Badge icon="colored devicon-nodejs-plain" />
+							<Badge icon="colored devicon-php-plain" />
+							<Badge icon="devicon-python-plain" />
+						</td>
+					</tr>
+					<tr>
+						<td>Framework</td>
+						<td>
+							<div class="flex flex-row flex-wrap gap-x-1 items-baseline">
+								<Badge icon="colored devicon-vuejs-plain" />
+								<Badge icon="colored devicon-nuxtjs-plain" />
+								<Badge icon="colored devicon-express-original" />
+								<Badge icon="colored devicon-flask-original" />
+								<Badge icon="colored devicon-laravel-plain" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Database</td>
+						<td>
+							<div class="flex flex-row flex-wrap gap-x-1 items-baseline">
+								<Badge icon="colored devicon-mysql-plain" />
+								<Badge icon="colored devicon-mongodb-plain" />
+								<Badge icon="colored devicon-postgresql-plain" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Operations</td>
+						<td>
+							<div class="flex flex-row flex-wrap gap-x-1 items-baseline">
+								<Badge icon="colored devicon-nginx-original" />
+								<Badge icon="colored devicon-grafana-original" />
+								<Badge icon="colored devicon-prometheus-original" />
+								<Badge icon="colored devicon-docker-plain" />
+								<Badge icon="colored devicon-podman-plain" />
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				I like to work on open source projects and contribute to the community. If you are interested in working with me, contact me through
+				<a target="_blank" rel="noopener noreferrer" href="mailto:meterglost@gmail.com">meterglost@gmail.com</a>.
+			</p>
+		</article>
+		<hr />
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		@apply flex flex-col gap-y-4 max-w-2xl mx-auto;
+	}
+</style>

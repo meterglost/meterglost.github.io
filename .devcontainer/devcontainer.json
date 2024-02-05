@@ -1,0 +1,59 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+	"name": "Node:latest",
+	"build": {
+		"context": "..",
+		"dockerfile": "../Dockerfile.dev"
+	},
+
+	"remoteEnv": {
+		"ESLINT_USE_FLAT_CONFIG": "true" // https://github.com/eslint/eslint/issues/17369
+	},
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Uncomment the next line to run commands after the container is created.
+	// "postCreateCommand": "cat /etc/os-release",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"astro-build.astro-vscode",
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint",
+				"ionutvmi.path-autocomplete",
+				"GitHub.vscode-github-actions"
+			],
+			"settings": {
+				"editor.formatOnSave": true,
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+
+				"prettier.requireConfig": true,
+				"prettier.documentSelectors": ["**/*.astro"],
+
+				"eslint.experimental.useFlatConfig": true,
+				"eslint.validate": ["astro", "javascript", "javascriptreact", "typescript", "typescriptreact"],
+
+				"path-autocomplete.triggerOutsideStrings": true,
+
+				"editor.quickSuggestions": {
+					"strings": true
+				},
+
+				"files.associations": {
+					".dockerignore": "ignore",
+					".gitignore": "ignore"
+				}
+			}
+		}
+	}
+
+	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "devcontainer"
+}
