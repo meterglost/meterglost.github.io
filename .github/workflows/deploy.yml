@@ -30,14 +30,14 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup Node.js
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install Node.js
         uses: actions/setup-node@v6
         with:
           node-version-file: package.json
           cache: pnpm
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
 
       - name: Install dependencies
         run: pnpm install
