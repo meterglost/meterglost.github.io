@@ -1,0 +1,127 @@
+@layer base {
+	* {
+		--themeColorPrimary: oklch(1 0.01 235);
+		--themeColorSecondary: oklch(0.6 0.01 235);
+		--themeColorHighlight: oklch(0.3 0.01 235);
+
+		@variant dark {
+			--themeColorPrimary: oklch(0.4 0.01 235);
+			--themeColorSecondary: oklch(1 0.01 235);
+			--themeColorHighlight: oklch(0.25 0.01 235);
+		}
+	}
+}
+
+@theme inline {
+	--font-base: "JetBrains Mono", var(--font-mono), monospace;
+	--font-heading: "Inter", var(--font-sans), sans-serif;
+
+	--color-primary: var(--themeColorPrimary);
+	--color-secondary: var(--themeColorSecondary);
+	--color-highlight: var(--themeColorHighlight);
+}
+
+@layer base {
+	a, button, input, select, textarea {
+		@apply focus-visible:outline-2 outline-offset-4;
+	}
+
+	body {
+		@apply bg-primary text-secondary font-base font-normal md:font-semibold text-sm md:text-base;
+	}
+
+	p {
+		@apply md:text-justify my-2;
+	}
+
+	h1 {
+		@apply font-heading font-bold text-highlight 2xl:text-8xl lg:text-6xl md:text-4xl text-3xl;
+
+		* + & {
+			@apply mt-6;
+		}
+
+		&:has(+ *) {
+			@apply mb-3;
+		}
+	}
+
+	h2 {
+		@apply font-heading font-bold text-highlight 2xl:text-6xl lg:text-4xl md:text-2xl text-2xl;
+
+		* + & {
+			@apply mt-6;
+		}
+
+		&:has(+ *) {
+			@apply mb-3;
+		}
+	}
+
+	h3 {
+		@apply font-heading font-semibold text-highlight text-xl;
+
+		* + & {
+			@apply mt-4;
+		}
+
+		&:has(+ *) {
+			@apply mb-2;
+		}
+	}
+
+	h4 {
+		@apply font-heading font-semibold text-highlight text-lg;
+
+		* + & {
+			@apply mt-4;
+		}
+
+		&:has(+ *) {
+			@apply mb-2;
+		}
+	}
+
+	h5 {
+		@apply font-heading font-medium text-highlight text-base;
+
+		* + & {
+			@apply mt-2;
+		}
+
+		&:has(+ *) {
+			@apply mb-1;
+		}
+	}
+
+	h6 {
+		@apply font-heading font-medium text-highlight text-sm;
+
+		* + & {
+			@apply mt-2;
+		}
+
+		&:has(+ *) {
+			@apply mb-1;
+		}
+	}
+
+	a {
+		@apply transition-[color];
+		@apply underline hover:text-highlight;
+	}
+
+	table {
+		& {
+			@apply w-full border-collapse;
+		}
+
+		& thead {
+			@apply font-medium;
+		}
+
+		& th, td {
+			@apply text-left align-top;
+		}
+	}
+}

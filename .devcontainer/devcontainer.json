@@ -1,0 +1,53 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+	"name": "NodeJS 24",
+	"image": "meterglost.github.io-dev",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	"remoteEnv": {
+		"DEVCONTAINER": "true"
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"biomejs.biome",
+				"bradlc.vscode-tailwindcss",
+				"ionutvmi.path-autocomplete"
+			],
+			"settings": {
+				"biome.requireConfiguration": true,
+
+				"files.associations": {
+					"*.css": "tailwindcss"
+				},
+
+				"[javascript][typescript][javascriptreact][typescriptreact]": {
+					"editor.defaultFormatter": "biomejs.biome",
+					"editor.formatOnSave": true,
+
+					"editor.codeActionsOnSave": {
+						"source.organizeImports.biome": "explicit",
+						"source.fixAll.biome": "explicit"
+					}
+				},
+
+				"[json][jsonc]": {
+					"editor.defaultFormatter": "biomejs.biome",
+					"editor.formatOnSave": true
+				},
+
+				"[javascript][typescript][javascriptreact][typescriptreact][css]": {
+					"path-autocomplete.pathMappings": {
+						"@/": "${workspaceFolder}/src/",
+						"/": "${workspaceFolder}/public/"
+					}
+				}
+			}
+		}
+	}
+
+	// "forwardPorts": [],
+}

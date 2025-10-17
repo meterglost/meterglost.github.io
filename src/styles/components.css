@@ -1,0 +1,46 @@
+@layer components {
+	.button {
+		& {
+			@apply rounded-lg inline-flex flex-row flex-nowrap items-center justify-center cursor-pointer;
+			@apply transition-[border-color,background-color,color,scale];
+			@apply active:scale-95;
+		}
+
+		&.button-primary {
+			@apply bg-neutral-400 hover:bg-neutral-500 text-neutral-50;
+		}
+
+		&.button-secondary {
+			@apply border-2 border-neutral-300 hover:border-neutral-400 bg-neutral-50 text-neutral-400;
+		}
+
+		&.button-lg {
+			@apply px-9 py-3 gap-x-3 font-semibold text-xl;
+		}
+
+		&.button-md {
+			@apply px-6 py-2 gap-x-2 font-medium text-base;
+		}
+
+		&.button-sm {
+			@apply mx-2 my-0.5 px-2 py-0.5 gap-x-1 font-normal text-sm;
+		}
+	}
+}
+
+@utility grid-template-square-* {
+	grid-template-columns: repeat(auto-fill, --spacing(--value(integer)));
+
+	& > * {
+		aspect-ratio: 1 / 1;
+	}
+}
+
+@utility list-terminal {
+	& {}
+
+	& > li::before {
+		@apply inline-block align-middle content-[""] size-5 mr-1 md:mr-2;
+		@apply bg-secondary mask-[url("@/components/icons/terminal.svg?url")];
+	}
+}
